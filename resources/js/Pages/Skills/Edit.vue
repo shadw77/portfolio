@@ -1,23 +1,16 @@
 <template>
-    <Head title="New Project" />
+    <Head title="Edit Skill" />
 
     <AuthenticatedLayout>
         <template #header>
             <h2 class="text-xl font-semibold leading-tight text-gray-800">
-                New Project
+                Edit Skill
             </h2>
         </template>
 
         <div class="py-12">
             <div class="mx-auto max-w-md sm:px-6 lg:px-8 bg-white">
                 <form class="p-4" @submit.prevent="submit">
-                    <div>
-                        <InputLabel for="skill_id" value="Skill" />
-                        <select id="skill_id" name="skill_id" v-model="form.skill_id"
-                        class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 rounded-md sm:text-sm">
-                            <option v-for="skill in skills" :key="skill.id" :value="skill.id"> {{ skill.name }}</option>
-                        </select>
-                    </div>
                     <div>
                         <InputLabel for="name" value="Name" />
                         <TextInput
@@ -26,19 +19,7 @@
                             class="mt-1 block w-full"
                             v-model="form.name"
                             autofocus
-                            autocomplete="name"
-                        />
-                        <InputError class="mt-2" :message="form.errors.name" />
-                    </div>
-
-                    <div>
-                        <InputLabel for="project_url" value="URL" />
-                        <TextInput
-                            id="project_url"
-                            type="text"
-                            class="mt-1 block w-full"
-                            v-model="form.project_url"
-                            autocomplete="projecturl"
+                            autocomplete="username"
                         />
                         <InputError class="mt-2" :message="form.errors.name" />
                     </div>
@@ -60,7 +41,7 @@
                             :class="{ 'opacity-25': form.processing }"
                             :disabled="form.processing"
                         >
-                            Store
+                            Update
                         </PrimaryButton>
                     </div>
                 </form>
@@ -70,24 +51,26 @@
 </template>
 <script setup>
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
-import { Head, useForm, Link } from "@inertiajs/vue3";
+import { Head, createInertiaApp, useForm, router } from "@inertiajs/vue3";
 import InputError from "@/Components/InputError.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import TextInput from "@/Components/TextInput.vue";
 
-defineProps({
-    skills: Array
-});
+const props = defineProps({
+    skill:Object
+})
 
 const form = useForm({
-    name: "",
-    project_url: "",
-    skill_id: "",
+    name: props.skill?.name,
     image: null,
 });
 
 const submit = () => {
-    form.post(route("projects.store"));
+    router.post(`/skills/${props.skill.id}`, {
+        _method: "put",
+        name: form.name,
+        image: form.image
+    })
 };
 </script>
