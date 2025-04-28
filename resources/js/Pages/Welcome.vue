@@ -1,6 +1,6 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
-import Frontend from "@/Layouts/Frontend.vue";
+import FrontendLayout from "@/Layouts/Frontend.vue";
 
 defineProps({
     canLogin: {
@@ -29,5 +29,12 @@ function handleImageError() {
 
 <template>
     <Head title="Welcome to portfolio" />
-    <Frontend></Frontend>
+    <FrontendLayout>
+        <!-- Hero -->
+        <!-- Promote -->
+        <!-- About -->
+        <!-- Skills -->
+        <!-- Services -->
+        <!-- Contact -->
+    </FrontendLayout>
 </template>
