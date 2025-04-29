@@ -1,7 +1,7 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
 import FrontendLayout from "@/Layouts/Frontend.vue";
-
+import Hero from '@/Components/Frontend/Hero.vue';
 defineProps({
     canLogin: {
         type: Boolean,
@@ -31,6 +31,7 @@ function handleImageError() {
     <Head title="Welcome to portfolio" />
     <FrontendLayout>
         <!-- Hero -->
+        <Hero/>
         <!-- Promote -->
         <!-- About -->
         <!-- Skills -->
