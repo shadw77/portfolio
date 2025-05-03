@@ -2,6 +2,8 @@
 import { Head, Link } from '@inertiajs/vue3';
 import FrontendLayout from "@/Layouts/Frontend.vue";
 import Hero from '@/Components/Frontend/Hero.vue';
+import Promote from '@/Components/Frontend/Promote.vue';
+
 defineProps({
     canLogin: {
         type: Boolean,
@@ -33,6 +35,7 @@ function handleImageError() {
         <!-- Hero -->
         <Hero/>
         <!-- Promote -->
+        <Promote/>
         <!-- About -->
         <!-- Skills -->
         <!-- Services -->
