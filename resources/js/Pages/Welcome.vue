@@ -4,6 +4,7 @@ import FrontendLayout from "@/Layouts/Frontend.vue";
 import Hero from '@/Components/Frontend/Hero.vue';
 import Promote from '@/Components/Frontend/Promote.vue';
 import About from '@/Components/Frontend/About.vue';
+import Skills from '@/Components/Frontend/Skills.vue';
 
 defineProps({
     canLogin: {
@@ -19,6 +20,10 @@ defineProps({
     phpVersion: {
         type: String,
         required: true,
+    },
+    skills: {
+        type: Object,
+        required: true
     },
 });
 
@@ -40,6 +45,7 @@ function handleImageError() {
         <!-- About -->
         <About/>
         <!-- Skills -->
+        <Skills :skills="skills" />
         <!-- Services -->
         <!-- Contact -->
     </FrontendLayout>
