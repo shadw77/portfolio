@@ -5,6 +5,7 @@ import Hero from '@/Components/Frontend/Hero.vue';
 import Promote from '@/Components/Frontend/Promote.vue';
 import About from '@/Components/Frontend/About.vue';
 import Skills from '@/Components/Frontend/Skills.vue';
+import Portfolio from '@/Components/Frontend/Portfolio.vue';
 
 defineProps({
     canLogin: {
@@ -25,6 +26,10 @@ defineProps({
         type: Object,
         required: true
     },
+    projects: {
+        type: Object,
+        required: true
+    }
 });
 
 function handleImageError() {
@@ -47,6 +52,7 @@ function handleImageError() {
         <!-- Skills -->
         <Skills :skills="skills" />
         <!-- Services -->
+        <Portfolio :projects="projects" :skills="skills"/>
         <!-- Contact -->
     </FrontendLayout>
 </template>
