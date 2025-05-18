@@ -26,6 +26,20 @@
                     >
                         Work with me
                     </button>
+                    <div class="pt-12">
+                        <h5 class="text-lg flex items-center justify-center lg:justify-center text-black dark:text-white mb-2">
+                            Follow me on
+                        </h5>
+                        <div class="flex items-center mb-6">
+                            <a href="https:://github" class="w-12 h-12 rounded-full flex items-center justify-center border 
+                                border-white text-black dark:text-white hover:bg-light-secondary hover:border-light-secondary
+                                dark:hover:bg-dark-secondary dark:hover:border-dark-secondary mr-3 sm:mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+                            </svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div
                     class="flex flex-1 justify-end items-center h-full mt-8 md:mt-0"
