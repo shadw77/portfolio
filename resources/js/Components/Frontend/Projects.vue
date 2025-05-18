@@ -20,7 +20,7 @@ const filterProjects = (id) => {
 };
 </script>
 <template>
-    <div class="container mx-auto">
+    <div class="container mx-auto" id="projects">
         <nav
             class="mb-12 border-b-2 border-light-tertiary dark:text-dark-navy-100"
         >

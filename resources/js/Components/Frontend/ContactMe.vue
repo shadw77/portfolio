@@ -24,7 +24,7 @@ const submit = () => {
 };
 </script>
 <template>
-    <section class="section bg-light-primary dark:bg-dar-primary">
+    <section id="contact" class="section bg-light-primary dark:bg-dar-primary">
         <div class="container mx-auto">
             <div class="flex flex-col items-center text-center">
                 <h2 class="section-title">Contact Me</h2>
