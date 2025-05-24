@@ -17,4 +17,13 @@ export default defineConfig({
             },
         }),
     ],
+    server: {
+        https: true,
+    },
+    base: '/build/',
+    build: {
+        rollupOptions: {
+            external: ['ziggy'],
+        },
+    }
 });
