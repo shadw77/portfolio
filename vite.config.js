@@ -20,10 +20,12 @@ export default defineConfig({
     server: {
         https: true,
     },
-    base: '/build/',
+    base: './',
     build: {
         rollupOptions: {
             external: ['ziggy'],
         },
+        outDir: 'public/build',
+        emptyOutDir: true,
     }
 });

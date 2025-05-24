@@ -4,14 +4,14 @@
     "functions": {
         "api/index.php": { "runtime": "vercel-php@0.7.2" }
     },
-    "routes": [{
-        "src": "/(.*)",
-        "dest": "/api/index.php"
-    }],
+    "routes": [
+        { "src": "/(.*)", "dest": "/index.php" }
+    ],
+    "outputDirectory": "public",
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "https:://shadwa.com",
+        "APP_URL": "https://shadwa.com",
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php" ,
         "APP_PACKAGES_CACHE": "/tmp/packages.php",
@@ -20,7 +20,8 @@
         "APP_COMPILED_PATH": "/tmp",
 
         "CACHE_DRIVER": "array",
-        "LOG_CHANNEL": "stderr",
-        "SESSION_DRIVER": "cookie"
+        "LOG_CHANNEL": "null",
+        "SESSION_DRIVER": "database",
+        "SESSION_SAME_SITE": "none"
     }
 }
